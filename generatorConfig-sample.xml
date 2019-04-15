@@ -5,7 +5,7 @@
 
 <generatorConfiguration>
     <!-- 常修改配置 -->
-    <properties resource="generator.properties"></properties>
+    <properties url="file:./generator.properties"></properties>
     <!-- 指定驱动的路径 -->
     <classPathEntry location="mysql-connector-java-8.0.13.jar"/>
 
