@@ -1,0 +1,8 @@
+/interface
+/javaModel
+/sqlMap
+!/interface/dontdele
+!/javaModel/dontdele
+!/sqlMap/dontdele
+generator.properties
+generatorConfig.xml

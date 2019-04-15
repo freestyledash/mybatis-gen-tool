@@ -4,46 +4,58 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
+    <!-- 常修改配置 -->
+    <properties url="file:./generator.properties"></properties>
+    <!-- 指定驱动的路径 -->
     <classPathEntry location="mysql-connector-java-8.0.13.jar"/>
 
     <context id="mysql" targetRuntime="MyBatis3">
+        <!-- 生成的Java文件的编码 -->
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <!-- 格式化java代码 -->
+        <property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter"/>
+        <!-- 格式化XML代码 -->
+        <property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter"/>
+
         <commentGenerator>
-            <property name="suppressDate" value="true"/>
+            <!-- 生成日期 -->
+            <property name="suppressDate" value="false"/>
+            <!-- 不生成注释 -->
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
 
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
-                        connectionURL="jdbc:mysql://127.0.0.1:3306/jackal?nullCatalogMeansCurrent=true"
-                        userId="root"
-                        password="root">
+                        connectionURL="${connectionURL}"
+                        userId="${userId}"
+                        password="${password}">
         </jdbcConnection>
-
 
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
 
-
-        <javaModelGenerator targetPackage="com.freestyledash.jackal.dao" targetProject="./">
+        <javaModelGenerator targetPackage="${javaModelTargetPackage}" targetProject="./javaModel">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="sql" targetProject="./">
+        <sqlMapGenerator targetPackage="${sqlMapperTargetPackage}" targetProject="./sqlMap">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.freestyledash.jackal.dao" targetProject="./">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="${javaClientTargetPackage}" targetProject="./interface">
         </javaClientGenerator>
 
-
+        <!-- 需要生成xml和mapper的表写在下面 -->
+        <!-- 
+        eg:
         <table tableName="business" domainObjectName="Business"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
         </table>
-
-        <table tableName="comment" domainObjectName="Comment"
+        -->
+                <table tableName="business" domainObjectName="Business"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
