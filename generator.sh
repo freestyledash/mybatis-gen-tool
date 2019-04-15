@@ -1,3 +1,4 @@
+#!bin/bash
 # 判断java是否存在
 if hash java 2>/dev/null; then
     echo "find java"
