@@ -18,4 +18,3 @@ generator.properties;generateConfig.xml包含了需要生成的表的配置,gene
    
 # todo
 1. 增加支持windows的bat文件
-2. generateConfig.xml更加详细
