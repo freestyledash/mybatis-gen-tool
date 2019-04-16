@@ -12,8 +12,8 @@ generator.properties;generateConfig.xml包含了需要生成的表的配置,gene
    sh generator.sh
    ```
    ```
-   #windos 运行
-   cmd 
+   #windows 运行
+   generator.bat
    ```
 
 其他工具：
@@ -22,6 +22,3 @@ generator.properties;generateConfig.xml包含了需要生成的表的配置,gene
    sh clean.sh
    ```
 
-   
-# todo
-1. 增加支持windows的bat文件
