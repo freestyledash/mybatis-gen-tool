@@ -6,3 +6,5 @@
 !/sqlMap/dontdele
 generator.properties
 generatorConfig.xml
+.idea
+*.iml

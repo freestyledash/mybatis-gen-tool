@@ -1,6 +1,6 @@
 @echo off
 echo generator.bat START
-:: ÅĞ¶ÏJAVA_HOMEÊÇ·ñ´æÔÚ
+:: åˆ¤æ–­JAVA_HOMEæ˜¯å¦å­˜åœ¨
 if "%JAVA_HOME%" == "" (
     goto error
 ) else (
@@ -16,7 +16,7 @@ if "%JAVA_HOME%" == "" (
  goto end
  
 :start
-:: ¿ªÊ¼³ÌĞò
+:: å¼€å§‹ç¨‹åº
  echo BEGIN RUN mybatis-generator
  java -jar mybatis-generator-core-1.3.7.jar -configfile ./generatorConfig.xml -overwrite
  echo END RUN mybatis-generator
